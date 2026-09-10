@@ -1,4 +1,4 @@
-<div class="bg-gray-800 text-white flex items-center px-3 md:px-4 py-1 justify-between">
+<div class="sticky top-0 z-50 bg-gray-800 text-white flex items-center px-3 md:px-4 py-1 justify-between h-13">
   {{-- kiri --}}
   <div class="flex items-center gap-3">
     <a href="{{route('home')}}"><img src="{{asset('images/logo.png')}}" alt="" class="h-11 w-11 object-contain bg-white rounded-full md:rounded"></a>
@@ -34,7 +34,8 @@
 
         <div class="" data-submenu-wrapper>
           <button class="flex items-center justify-between px-4 py-2 w-full border-b border-gray-300" data-action="toggle-submenu">
-            <img src="{{auth()->user()->avatar === 'img-default.png' ? asset('images/' . auth()->user()->avatar) : asset('storage/' . auth()->user()->avatar) }}" alt="" class="rounded-full w-9 h-9 bg-gray-200 cursor-pointer" alt="">
+            <img src="{{auth()->user()->avatar ? asset('storage/' . auth()->user()->avatar) : asset('images/img-default.png') }}" alt="" class="rounded-full w-9 h-9 bg-white cursor-pointer">
+            
             <i class="fa-solid fa-chevron-down text-[14px]"></i>
           </button>
 
@@ -57,7 +58,7 @@
 
     <div class="hidden md:block md:relative" data-menu-wrapper>
       <div class="relative" data-action="toggle-menu">
-        <img src="{{auth()->user()->avatar === 'img-default.png' ? asset('images/img-default.png') : asset('storage/' . auth()->user()->avatar)}}" alt="" class="h-8.5 w-8.5 rounded-full bg-white cursor-pointer">
+        <img src="{{auth()->user()->avatar ? asset('storage/' . auth()->user()->avatar) : asset('images/img-default.png') }}" alt="" class="h-8.5 w-8.5 rounded-full bg-white cursor-pointer">
 
         <button class="absolute -bottom-0.5 cursor-pointer right-0 bg-white  text-black rounded-full text-xs flex items-center justify-center w-4 h-4">
           <i class="fa-solid fa-chevron-down"></i>

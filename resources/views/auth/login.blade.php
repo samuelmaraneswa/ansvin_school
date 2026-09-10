@@ -12,7 +12,7 @@
   @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
-  <x-layouts.authHeader />
+  <x-header.authHeader />
 
   {{-- form login --}}
   <div class="flex items-center justify-center mt-10 p-1 md:p-0">
@@ -31,11 +31,11 @@
           <p data-login-error class="text-red-600 text-center mt-4"></p>
 
           <div class="flex items-start p-4">
-            <label for="username" class="w-22 md:w-42 block pt-1 shrink-0">Username</label>
+            <label for="login_id" class="w-22 md:w-42 block pt-1 shrink-0">Login Id</label>
             <span class="pt-1 mr-1">:</span>
             <div class="flex-1">
-              <input type="text" id="username" placeholder="Username..." name="username" class="border border-gray-300 rounded px-2 py-1 focus:outline-none w-full" data-login-username autocomplete="off">
-              <p class="text-red-600 text-sm mx-2 italic" data-error-field="username"></p>
+              <input type="text" id="login_id" placeholder="Login Id..." name="login_id" class="border border-gray-300 rounded px-2 py-1 focus:outline-none w-full" data-login-login_id autocomplete="off">
+              <p class="text-red-600 text-sm mx-2 italic" data-error-field="login_id"></p>
             </div>
           </div>
           

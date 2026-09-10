@@ -17,13 +17,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const form = document.querySelector('[data-form-login]')
   const submit = document.getElementById('btnLogin')
-  const username = document.querySelector('[data-login-username]')
+  const login_id = document.querySelector('[data-login-login_id]')
   const password = document.querySelector('[data-login-password]')
   const textError = document.querySelector('[data-login-error]')
 
-  if(!form || !submit || !username || !password || !textError) return
+  if(!form || !submit || !login_id || !password || !textError) return
 
-  username.focus();
+  login_id.focus();
 
   function clearValidation(){
     document.querySelectorAll('[data-error-field]').forEach(el => {
@@ -59,8 +59,8 @@ document.addEventListener('DOMContentLoaded', () => {
     textError.textContent = ''
 
     const errors = {}
-    if(!username.value.trim()){
-      errors.username = "Username wajib di isi!"
+    if(!login_id.value.trim()){
+      errors.login_id = "Login Id wajib di isi!"
     }
     
     if(!password.value.trim()){

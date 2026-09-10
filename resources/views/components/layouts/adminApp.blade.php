@@ -14,9 +14,16 @@
 </head>
 
 <body>
-  <x-partials.header.adminHeader />
+  <x-header.adminHeader />
 
-  {{$slot}}
+  <div class="flex">
+    <x-sidebar.adminSidebar />
+
+    <main data-content="admin" class="flex-1 min-w-0">
+      {{$slot}}
+    </main>
+  </div>
+
 </body>
 
 </html>

@@ -1,7 +1,7 @@
 @auth
   <div class="overflow-hidden" data-submenu-wrapper>
     <button class="flex items-center justify-between px-4 py-2 w-full border-b border-gray-300" data-action="toggle-submenu">
-      <img src="{{auth()->user()->avatar === 'img-default.png' ? asset('images/' . auth()->user()->avatar) : asset('storage/' . auth()->user()->avatar) }}" alt="" class="rounded-full w-9 h-9 bg-gray-200 cursor-pointer" alt="">
+      <img src="{{auth()->user()->avatar ? asset('storage/' . auth()->user()->avatar) : asset('images/img-default.png') }}" alt="" class="rounded-full w-9 h-9 bg-white cursor-pointer">
       <i class="fa-solid fa-chevron-down"></i>
     </button>
 

@@ -1,7 +1,7 @@
 @auth
   <div class="relative" data-menu-wrapper>
     <div class="" data-action="toggle-menu">
-      <img src="{{auth()->user()->avatar === 'img-default.png' ? asset('images/' . auth()->user()->avatar) : asset('storage/' . auth()->user()->avatar) }}" alt="" class="rounded-full w-9 h-9 bg-white cursor-pointer">
+      <img src="{{auth()->user()->avatar ? asset('storage/' . auth()->user()->avatar) : asset('images/img-default.png') }}" alt="" class="rounded-full w-9 h-9 bg-white cursor-pointer">
 
       <button class="absolute -bottom-0.5 cursor-pointer right-0 bg-white  text-black rounded-full text-xs flex items-center justify-center w-4 h-4">
         <i class="fa-solid fa-chevron-down"></i>
