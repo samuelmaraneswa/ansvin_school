@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Pegawai;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -14,12 +15,18 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-      User::create([
+      $user = User::create([
         'login_id' => 'ANVPG2026001',
         'name' => 'samuel',
         'email' => 'samuelmaraneswa60@gmail.com',
         'password' => Hash::make('samuel'),
-        'role' => 'admin'
+        'role' => 'admin',
+        'must_change_password' => 0
+      ]);
+
+      Pegawai::create([
+        'user_id' => $user->id,
+        'kode_pegawai' => 'ANVPG2026001',
       ]);
     }
 }

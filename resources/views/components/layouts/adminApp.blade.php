@@ -10,13 +10,16 @@
   <!-- font awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+  <!-- sweet-alert -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
   @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
 <body>
   <x-header.adminHeader />
 
-  <div class="flex">
+  <div class="flex ">
     <x-sidebar.adminSidebar />
 
     <main data-content="admin" class="flex-1 min-w-0">

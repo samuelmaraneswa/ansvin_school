@@ -19,9 +19,13 @@ Route::post('logout', [AuthController::class, 'logout'])->middleware('auth')->na
 
 Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
   Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
-  Route::get('pegawai', [PegawaiController::class, 'index'])->name('pegawai.index');
-});
 
-Route::prefix('guru')->name('guru.')->middleware('auth')->group(function () {
-  Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+  // user start
+  Route::get('pegawai', [PegawaiController::class, 'index'])->name('pegawai.index');
+  Route::get('pegawai/create', [PegawaiController::class, 'create'])->name('pegawai.create');
+  Route::get('pegawai/generateKode', [PegawaiController::class, 'generateKode'])->name('pegawai.generateKode');
+  Route::post('pegawai/store', [PegawaiController::class, 'store'])->name('pegawai.store');
+  Route::get('pegawai/{pegawai}', [PegawaiController::class, 'show'])->name('pegawai.show');
+  Route::get('pegawai/{pegawai}/edit', [PegawaiController::class, 'edit'])->name('pegawai.edit');
+  // user end
 });

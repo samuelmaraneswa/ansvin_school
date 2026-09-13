@@ -18,9 +18,10 @@ return new class extends Migration
             $table->string('jenis_kelamin')->nullable();
             $table->string('tpt_lahir')->nullable();
             $table->string('tgl_lahir')->nullable();
+            $table->string('nik', 16)->nullable()->unique();
             $table->string('alamat')->nullable();
             $table->string('no_hp')->nullable();
-            $table->string('email')->unique();
+            $table->string('email')->nullable()->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
 

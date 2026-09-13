@@ -1,3 +1,5 @@
+import { initFunctions } from "./initFunctions"
+
 updateActiveMenu(window.location.href)
 document.addEventListener('click', async (e) => {
 
@@ -26,6 +28,49 @@ function updateActiveMenu(url){
       link.classList.add('bg-gray-900', 'text-white')
     }
   })
+
+  document.querySelectorAll('[data-submenu-wrapper]').forEach(wrapper => {
+    const activeLink = wrapper.querySelector(
+      '[data-action="navigate-admin"].bg-gray-900'
+    )
+
+    const submenu = wrapper.querySelector('[data-submenu]')
+    const icon = wrapper.querySelector('[data-action="toggle-submenu"] i')
+
+    if (activeLink) {
+      submenu?.classList.remove('hidden')
+      icon?.classList.remove('fa-chevron-down')
+      icon?.classList.add('fa-chevron-up')
+    }
+  })
+}
+
+function closeMobileMenu() {
+  const menuWrapper = document
+    .querySelector('[data-action="toggle-menu"]')
+    ?.closest('[data-menu-wrapper]')
+
+  if (!menuWrapper) return
+
+  const menu = menuWrapper.querySelector('[data-menu]')
+  menu?.classList.add('hidden')
+
+  menuWrapper.querySelectorAll('[data-submenu-wrapper]').forEach(wrapper => {
+    const submenu = wrapper.querySelector('[data-submenu]')
+    const icon = wrapper.querySelector('[data-action="toggle-submenu"] i')
+    const activeLink = wrapper.querySelector(
+      '[data-action="navigate-admin"].bg-gray-900'
+    )
+
+    if (activeLink) {
+      submenu?.classList.remove('hidden')
+    } else {
+      submenu?.classList.add('hidden')
+
+      icon?.classList.remove('fa-chevron-up')
+      icon?.classList.add('fa-chevron-down')
+    }
+  })
 }
 
 export async function navigateAdmin(url, push = true){
@@ -34,6 +79,9 @@ export async function navigateAdmin(url, push = true){
 
   const res = await fetch(url)
   const html = await res.text()
+
+  // console.log(html)
+  // return
 
   const parser = new DOMParser()
   const doc = parser.parseFromString(html, 'text/html');
@@ -48,5 +96,9 @@ export async function navigateAdmin(url, push = true){
   }
 
   updateActiveMenu(url)
+
+  initFunctions()
+
+  closeMobileMenu()
 }
 

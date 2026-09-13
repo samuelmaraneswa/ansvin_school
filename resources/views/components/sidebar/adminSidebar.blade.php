@@ -1,4 +1,4 @@
-<aside class="hidden md:block bg-gray-700 text-white w-68.75 h-[calc(100vh-52px)] overflow-y-auto">
+<aside class="hidden md:block sticky top-13 self-start bg-gray-700 text-white w-68.75 h-[calc(100vh-52px)] overflow-y-auto">
   <x-partials.sidebar.formSearchSidebarAdmin />
 
   <div class="mt-4">

@@ -11,19 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pegawai', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
-            $table->string('kode_pegawai')->unique();
-            $table->string('nama_lengkap');
-            $table->string('nik', 16)->unique();
-            $table->enum('jenis_kelamin', ['L','P']);
-            $table->string('tempat_lahir');
-            $table->date('tanggal_lahir');
-            $table->text('alamat');
-            $table->string('no_hp', 20)->nullable();
-            $table->timestamps();
-        });
+      Schema::create('pegawai', function (Blueprint $table) {
+          $table->id();
+          $table->foreignId('user_id')->unique()->constrained('users')->cascadeOnDelete();
+          $table->string('kode_pegawai', 20)->unique();
+          $table->timestamps();
+      });
     }
 
     /**
