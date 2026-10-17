@@ -16,7 +16,7 @@ export function showConfirm(title, text, callback) {
     title,
     text,
     showCancelButton: true,
-    confirmButtonText: 'Ya, hapus',
+    confirmButtonText: 'Ya, lanjut',
     cancelButtonText: 'Batal'
   }).then((result) => {
     if (result.isConfirmed && callback) {

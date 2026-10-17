@@ -80,9 +80,6 @@ export async function navigateAdmin(url, push = true){
   const res = await fetch(url)
   const html = await res.text()
 
-  // console.log(html)
-  // return
-
   const parser = new DOMParser()
   const doc = parser.parseFromString(html, 'text/html');
 

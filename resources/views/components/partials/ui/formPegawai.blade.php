@@ -11,6 +11,7 @@
     data-form-pegawai 
     data-generate-kode="{{route('admin.pegawai.generateKode')}}"
     data-store-url="{{$storeUrl}}"
+    data-update-url="{{$updateUrl}}"
     data-index-url="{{$indexUrl}}"
   >
 
@@ -19,7 +20,7 @@
     <input type="hidden" name="id" value="{{$pegawai?->id}}" data-pegawai-id>
 
     <div class="flex items-start mt-4">
-      <label for="name" class="w-50 block pt-1">Nama Lengkap</label>
+      <label for="name" class="w-20 md:w-50 block pt-1">Nama <span class="hidden md:inline">Lengkap</span></label>
       <span class="mr-2 pt-1">:</span>
 
       <div class="flex-1">
@@ -32,7 +33,7 @@
     </div> 
 
     <div class="flex items-start mt-4">
-      <label for="login_id" class="w-50 block pt-1">Login Id</label>
+      <label for="login_id" class="w-20 md:w-50 block pt-1">Login Id</label>
       <span class="mr-2 pt-1">:</span>
 
       <div class="flex-1">
@@ -42,7 +43,7 @@
     </div>
 
     <div class="flex items-start mt-4" data-field-row="kode_pegawai">
-      <label for="kode_pegawai" class="kode_pegawai w-50 block pt-1">Kode Pegawai</label>
+      <label for="kode_pegawai" class="kode_pegawai w-20 md:w-50 block pt-1">Kode <span class="hidden md:inline">Pegawai</span></label>
       <span class="mr-2 pt-1">:</span>
 
       <div class="flex-1"> 
@@ -52,7 +53,7 @@
     </div>
 
     <div class="flex items-start mt-4">
-      <label for="role" class="w-50 block pt-1">Role</label>
+      <label for="role" class="w-20 md:w-50 block pt-1">Role</label>
       <span class="mr-2 pt-1">:</span>
 
       <div class="flex-1">
@@ -66,7 +67,7 @@
     </div>
 
     <div class="flex items-start mt-4">
-      <label for="nik" class="w-50 block pt-1">NIK</label>
+      <label for="nik" class="w-20 md:w-50 block pt-1">NIK</label>
       <span class="mr-2 pt-1">:</span>
 
       <div class="flex-1">
@@ -76,7 +77,7 @@
     </div>
 
     <div class="flex items-start mt-4">
-      <label for="jenis_kelamin" class="w-50 block pt-1">Jenis Kelamin</label>
+      <label for="jenis_kelamin" class="w-20 md:w-50 block pt-1">Jenis Kelamin</label>
       <span class="mr-2 pt-1">:</span>
 
       <div class="flex-1">
@@ -90,7 +91,7 @@
     </div>
 
     <div class="flex items-start mt-4">
-      <label for="tgl_lahir" class="w-50 block pt-1">Tempat Lahir</label>
+      <label for="tgl_lahir" class="w-20 md:w-50 block pt-1">Tpt Lahir</label>
       <span class="mr-2 pt-1">:</span>
 
       <div class="flex-1">
@@ -100,7 +101,7 @@
     </div>
 
     <div class="flex items-start mt-4">
-      <label for="tgl_lahir" class="w-50 block pt-1">Tanggal Lahir</label>
+      <label for="tgl_lahir" class="w-20 md:w-50 block pt-1">Tgl Lahir</label>
       <span class="mr-2 pt-1">:</span>
 
       <div class="flex-1">
@@ -110,7 +111,7 @@
     </div>
 
     <div class="flex items-start mt-4">
-      <label for="alamat" class="w-50 block pt-1">Alamat</label>
+      <label for="alamat" class="w-20 md:w-50 block pt-1">Alamat</label>
       <span class="mr-2 pt-1">:</span>
 
       <div class="flex-1">
@@ -121,7 +122,7 @@
     </div>
 
     <div class="flex items-start mt-4">
-      <label for="no_hp" class="w-50 block pt-1">No HP</label>
+      <label for="no_hp" class="w-20 md:w-50 block pt-1">No HP</label>
       <span class="mr-2 pt-1">:</span>
 
       <div class="flex-1">
@@ -131,7 +132,7 @@
     </div>
 
     <div class="flex items-start mt-4">
-      <label for="email" class="w-50 block pt-1">Email</label>
+      <label for="email" class="w-20 md:w-50 block pt-1">Email</label>
       <span class="mr-2 pt-1">:</span>
 
       <div class="flex-1">
@@ -141,7 +142,7 @@
     </div>
 
     <div class="flex items-start mt-4">
-      <label for="avatar" class="w-50 block pt-1">Image</label>
+      <label for="avatar" class="w-20 md:w-50 block pt-1">Image</label>
       <span class="mr-2 pt-1">:</span>
 
       <div class="flex-1">
@@ -154,7 +155,7 @@
         <span class="text-gray-500 text-sm italic">Preview:</span>
           <div class="mt-2">
 
-            <img src="{{$pegawai?->user?->avatar ? asset('storage/' . $pegawai->user->avatar) : asset('images/img-default.png') }}" class="w-60 h-80 object-cover rounded border" alt="Avatar User" data-avatar-user-preview>
+            <img src="{{$pegawai?->user?->avatar ? asset('storage/' . $pegawai->user->avatar) : asset('images/img-default.png') }}" class="w-30 md:w-60 h-40 md:h-80 object-cover rounded border" alt="Avatar User" data-avatar-user-preview>
 
           </div>
       </div>
