@@ -27,6 +27,7 @@ class UserSeeder extends Seeder
       Pegawai::create([
         'user_id' => $user->id,
         'kode_pegawai' => 'ANVPG2026001',
+        'jabatan' => 'admin',
       ]);
     }
 }

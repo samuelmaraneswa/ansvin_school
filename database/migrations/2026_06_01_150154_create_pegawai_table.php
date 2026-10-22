@@ -15,6 +15,12 @@ return new class extends Migration
           $table->id();
           $table->foreignId('user_id')->unique()->constrained('users')->cascadeOnDelete();
           $table->string('kode_pegawai', 20)->unique();
+          $table->enum('jabatan', [
+            'admin',
+            'kepala_sekolah',
+            'wakil_kepala_sekolah',
+            'guru'
+          ])->default('guru');
           $table->timestamps();
       });
     }

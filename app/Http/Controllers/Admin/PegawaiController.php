@@ -219,7 +219,8 @@ class PegawaiController extends Controller
         'name' => 'required|string|max:255|min:3',
         'login_id' => 'required|string|max:255|unique:users,login_id',
         'kode_pegawai' => 'required|string|max:30|unique:pegawai,kode_pegawai',
-        'role' => 'required|in:admin,guru',
+        'role' => 'required|in:admin,guru,pegawai',
+        'jabatan' => 'required|in:admin,kepala_sekolah,wakil_kepala_sekolah,guru',
         'nik' => 'nullable|string|size:16|unique:users,nik',
         'jenis_kelamin' => 'nullable|in:L,P',
         'tpt_lahir' => 'nullable|string|max:255',
@@ -271,6 +272,7 @@ class PegawaiController extends Controller
         Pegawai::create([
           'user_id' => $user->id,
           'kode_pegawai' => $validated['kode_pegawai'],
+          'jabatan' => $validated['jabatan'],
         ]);
       });
 
@@ -434,7 +436,8 @@ class PegawaiController extends Controller
         'name' => 'required|string|max:255|min:3',
         'login_id' => 'required|string|max:255|unique:users,login_id,' . $pegawai->user_id,
         'kode_pegawai' => 'required|string|max:30|unique:pegawai,kode_pegawai,' . $pegawai->id,
-        'role' => 'required|in:admin,guru',
+        'role' => 'required|in:admin,guru,pegawai',
+        'jabatan' => 'required|in:admin,kepala_sekolah,wakil_kepala_sekolah,guru',
         'nik' => 'nullable|string|size:16|unique:users,nik,' . $pegawai->user_id,
         'jenis_kelamin' => 'nullable|in:L,P',
         'tpt_lahir' => 'nullable|string|max:255',
@@ -487,6 +490,7 @@ class PegawaiController extends Controller
 
         $pegawai->update([
           'kode_pegawai' => $validated['kode_pegawai'],
+          'jabatan' => $validated['jabatan'],
         ]);
       });
 

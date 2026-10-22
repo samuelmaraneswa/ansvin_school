@@ -77,11 +77,19 @@ export function initSearchPegawai(){
         return
       }
 
-      suggestion.innerHTML = data.users.map(item => `
-        <div class="px-3 py-2 cursor-pointer hover:bg-gray-100" data-keyword="${item.user.name}">
-          ${item.user.name}
-        </div>  
-      `).join('')
+      suggestion.innerHTML = data.users.map(item => {
+      const name = item.user.name
+      const regex = new RegExp(`(${keyword})`, 'ig')
+
+      const highlightedName = name.replace(regex, '<strong>$1</strong>')
+
+      return `
+        <div class="px-3 py-2 cursor-pointer hover:bg-gray-100"
+          data-keyword="${name}">
+          ${highlightedName}
+        </div>
+      `
+    }).join('')
 
       suggestion.classList.remove('hidden')
 

@@ -30,6 +30,7 @@ return new class extends Migration
             $table->enum('role',[
               'admin',
               'guru',
+              'pegawai',
               'siswa'
             ])->default('siswa');
 

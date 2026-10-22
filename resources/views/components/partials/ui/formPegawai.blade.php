@@ -61,8 +61,42 @@
           <option value="">--Pilih Role--</option>
           <option value="admin" @selected($pegawai?->user?->role === 'admin')>Admin</option>
           <option value="guru" @selected($pegawai?->user?->role === 'guru')>Guru</option>
+          <option value="pegawai" @selected($pegawai?->user?->role === 'pegawai')>Pegawai</option>
         </select>
         <p class="text-sm text-red-500 ml-4 italic" data-error-field="role"></p>
+      </div>
+    </div>
+
+    <div class="flex items-start mt-4">
+      <label for="jabatan" class="w-20 md:w-50 block pt-1">Jabatan</label>
+      <span class="mr-2 pt-1">:</span>
+
+      <div class="flex-1">
+        <select name="jabatan" id="jabatan"
+          class="w-full border border-gray-300 px-2 py-1 cursor-pointer rounded"
+          data-user-jabatan>
+
+          <option value="">--Pilih Jabatan--</option>
+
+          <option value="admin" @selected($pegawai?->jabatan === 'admin')>
+            Admin
+          </option>
+
+          <option value="kepala_sekolah" @selected($pegawai?->jabatan === 'kepala_sekolah')>
+            Kepala Sekolah
+          </option>
+          
+          <option value="wakil_kepala_sekolah" @selected($pegawai?->jabatan === 'wakil_kepala_sekolah')>
+            Wakil Kepala Sekolah
+          </option>
+
+          <option value="guru" @selected($pegawai?->jabatan === 'guru')>
+            Guru
+          </option>
+        </select>
+
+        <p class="text-sm text-red-500 ml-4 italic"
+          data-error-field="jabatan"></p>
       </div>
     </div>
 

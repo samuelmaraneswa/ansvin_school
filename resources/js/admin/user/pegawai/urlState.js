@@ -7,7 +7,7 @@ export function getQuery(){
     params.set('keyword', state.keyword)
   }
   
-  if(state.page){
+  if(state.page > 1){
     params.set('page', state.page)
   }
 
