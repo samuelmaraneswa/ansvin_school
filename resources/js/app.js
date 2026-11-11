@@ -3,6 +3,7 @@ import './header/mainHeader'
 import './auth/login'
 import './toggleMenu&SubMenu'
 import './sidebar'
+import './auth/changePassword'
 
 import { initFunctions } from './initFunctions';
 

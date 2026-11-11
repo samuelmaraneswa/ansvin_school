@@ -16,6 +16,8 @@ Route::prefix('profile')->name('profile.')->group(function () {
 Route::get('login', [AuthController::class, 'index'])->middleware('guest')->name('login');
 Route::post('login', [AuthController::class, 'login'])->middleware('guest')->name('login.store');
 Route::post('logout', [AuthController::class, 'logout'])->middleware('auth')->name('logout');
+Route::get('change-password', [AuthController::class, 'changePassword'])->middleware('auth')->name('password.change');
+Route::post('change-password', [AuthController::class, 'updatePassword'])->middleware('auth')->name('password.update');
 
 Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
   Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
