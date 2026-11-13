@@ -23,7 +23,7 @@
 <body>
   <x-header.authHeader />
   
-  <div class="bg-gray-100 w-170 p-6 space-y-4 mx-auto mt-5 rounded">
+  <div class="md:bg-gray-100 md:w-170 p-6 space-y-4 mx-auto mt-5 rounded">
     <div class="">
       <h2 class="text-lg font-semibold">Change Password</h2>
       <hr class="my-2">
@@ -41,7 +41,7 @@
         @csrf
 
         <div class="flex">
-          <label for="" class="inline-block w-40 shrink-0">Password Lama</label>
+          <label for="" class="inline-block w-20 shrink-0">Password Lama</label>
           <span class="mr-1">: </span>
 
           <div class="flex flex-col flex-1">
@@ -58,7 +58,7 @@
         </div>
 
         <div class="flex">
-          <label for="" class="inline-block w-40 shrink-0">Password Baru</label>
+          <label for="" class="inline-block w-20 shrink-0">Password Baru</label>
           <span class="mr-1">:</span>
 
           <div class="flex flex-col flex-1">
@@ -75,7 +75,7 @@
         </div>
 
         <div class="flex">
-          <label for="" class="inline-block w-40 shrink-0">Confirm Password</label>
+          <label for="" class="inline-block w-20 shrink-0">Confirm Password</label>
           <span class="mr-1">:</span>
 
           <div class="flex flex-col flex-1">

@@ -4,6 +4,7 @@ import './auth/login'
 import './toggleMenu&SubMenu'
 import './sidebar'
 import './auth/changePassword'
+import './utility/toggleEye'
 
 import { initFunctions } from './initFunctions';
 

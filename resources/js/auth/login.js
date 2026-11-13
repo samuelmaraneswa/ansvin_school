@@ -1,20 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-  document.addEventListener('click', (e) => {
-    const toggleEye = e.target.closest('[data-action="toggle-eye"]')
-    if(toggleEye){
-      const password = document.querySelector('[data-login-password]')
-      if(!password) return;
-
-      password.type = password.type === 'text' ? 'password' : 'text';
-
-      const icon = toggleEye.querySelector('i')
-      icon.classList.toggle('fa-eye-slash')
-      icon.classList.toggle('fa-eye')
-
-      return;
-    }
-  })
-
   const form = document.querySelector('[data-form-login]')
   const submit = document.getElementById('btnLogin')
   const login_id = document.querySelector('[data-login-login_id]')
