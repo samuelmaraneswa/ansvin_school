@@ -4,11 +4,12 @@
   <div class="mt-4">
 
     <x-navigation.sidebar.nav-linkAdmin name="Dashboard" href="{{route('admin.dashboard')}}" data-action="navigate-admin" />
-
+    
     <x-navigation.sidebar.nav-dropdownAdmin name="User">
       <x-partials.sidebar.nav-link name="Pegawai" link="{{route('admin.pegawai.index')}}" data-action="navigate-admin" /> 
       <x-partials.sidebar.nav-link name="Siswa" link="#" /> 
     </x-navigation.sidebar.nav-dropdownAdmin>
-
+    
+    <x-navigation.sidebar.nav-linkAdmin name="Tahun Ajaran" href="{{route('admin.tahun-ajaran.index')}}" data-action="navigate-admin" />
   </div>
 </aside>

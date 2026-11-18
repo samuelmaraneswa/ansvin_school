@@ -18,7 +18,7 @@
 
     <div class="hidden md:block md:relative" data-menu-wrapper>
       <div class="relative" data-action="toggle-menu">
-        <img src="{{auth()->user()->avatar ? asset('storage/' . auth()->user()->avatar) : asset('images/img-default.png') }}" alt="" class="h-8.5 w-8.5 rounded-full bg-white cursor-pointer">
+        <img src="{{auth()->user()->avatar ? asset('storage/' . auth()->user()->avatar) : asset('images/img-default.png') }}" alt="" class="h-8.5 w-8.5 rounded-full object-cover shrink-0 bg-white cursor-pointer">
 
         <button class="absolute -bottom-0.5 cursor-pointer right-0 bg-white  text-black rounded-full text-xs flex items-center justify-center w-4 h-4">
           <i class="fa-solid fa-chevron-down"></i>

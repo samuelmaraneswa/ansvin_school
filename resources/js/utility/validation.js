@@ -5,10 +5,11 @@ export function clearValidation(){
 }
 
 export function showValidation(errors){
-  Object.entries(errors).forEach(([field, message]) =>{
+  Object.entries(errors).forEach(([field, messages]) => {
     const el = document.querySelector(`[data-error-field="${field}"]`)
+
     if(el){
-      el.textContent = message
+      el.textContent = messages[0]
     }
   })
 }

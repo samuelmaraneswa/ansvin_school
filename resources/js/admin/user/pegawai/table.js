@@ -1,15 +1,15 @@
 import { getQuery } from "./urlState"
 
 export function renderTable(data){
-  const tbody = document.querySelector('[data-admin-pegawai-table]')
+  const tbody = document.querySelector('[data-admin-pegawai-table]') 
   if(!tbody) return
 
   const query = getQuery()
 
   tbody.innerHTML = data.pegawai.map((peg, index) => {
     
-    const showUrl = pegawaiRoutes.show.replace('__ID__', peg.id);
-    const editUrl = pegawaiRoutes.edit.replace('__ID__', peg.id);
+    const showUrl = pegawaiRoutes.show.replace('__ID__', peg.id) + (query ? `?${query}` : '');
+    const editUrl = pegawaiRoutes.edit.replace('__ID__', peg.id) + (query ? `?${query}` : '');
     const destroyUrl = pegawaiRoutes.destroy.replace('__ID__', peg.id);
 
     return `
@@ -19,7 +19,7 @@ export function renderTable(data){
       <td class="px-4 py-2">${peg.user.login_id}</td>
       <td class="px-4 py-2 flex items-center gap-4">
         <a href="${showUrl}" class="px-3 py-1 bg-gray-200 cursor-pointer hover:bg-gray-300 text-black rounded" data-pegawai-id="${peg.id}" data-action="navigate-admin">
-          Detail
+          Detail 
         </a> 
 
         <a href="${editUrl}" class="px-3 py-1 bg-green-500 cursor-pointer hover:bg-green-700 text-white rounded" data-action="navigate-admin" data-pegawai-id="${peg.id}">Edit</a>

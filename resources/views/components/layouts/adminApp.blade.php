@@ -22,6 +22,13 @@
       edit: @json(route('admin.pegawai.edit', '__ID__')),
       destroy: @json(route('admin.pegawai.destroy', '__ID__')),
     }
+    
+    const tahunAjaranRoutes = {
+      index: @json(route('admin.tahun-ajaran.index')),
+      show: @json(route('admin.tahun-ajaran.show', '__ID__')),
+      suggestion:@json(route('admin.tahun-ajaran.suggestion')),
+      activation: @json(route('admin.tahun-ajaran.activation', '__ID__')),
+    }
   </script>
 
   @vite(['resources/css/app.css', 'resources/js/app.js'])
