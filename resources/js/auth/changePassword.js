@@ -17,20 +17,20 @@ document.addEventListener("DOMContentLoaded", () => {
     if(!password_lama || !password_baru || !confirm_password) return
 
     const errors = {}
-    if(!password_lama.value.trim()){
-      errors.password_lama = "Password Lama tidak boleh kosong"
-    }
+    // if(!password_lama.value.trim()){
+    //   errors.password_lama = ["Password Lama tidak boleh kosong"]
+    // }
 
-    if(!password_baru.value.trim()){
-      errors.password_baru = "Password Baru tidak boleh kosong"
-    }
+    // if(!password_baru.value.trim()){
+    //   errors.password_baru = ["Password Baru tidak boleh kosong"]
+    // }
 
-    if(!confirm_password.value.trim()){
-      errors.confirm_password = "Confirm Password tidak boleh kosong"
-    }
+    // if(!confirm_password.value.trim()){
+    //   errors.confirm_password = ["Confirm Password tidak boleh kosong"]
+    // }
 
     clearValidation()
-    toggleBtn(btn, true, "Simpan")
+    toggleBtn(btn, true, "Simpan") 
 
     if(Object.keys(errors).length){
       showValidation(errors)
@@ -44,11 +44,12 @@ document.addEventListener("DOMContentLoaded", () => {
     try{
       const res = await fetch(url, {
         method: "POST",
+        headers: {'Accept': 'application/json'},
         body: formData
       })
 
       const data = await res.json()
-      // console.log(data)
+      console.log(data)
       if (!res.ok) {
         if (data.errors) {
           showValidation(data.errors)

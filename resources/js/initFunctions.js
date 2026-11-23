@@ -1,3 +1,6 @@
+import { initCRUDSemester } from "./admin/semester/crud"
+import { initSearchSemester } from "./admin/semester/search"
+import { initTableSemester } from "./admin/semester/table"
 import { CRUDTahunAjaran } from "./admin/tahun-ajaran/crud"
 import { initSearchTA } from "./admin/tahun-ajaran/search"
 import { initTabelTA } from "./admin/tahun-ajaran/table-tajaran"
@@ -21,4 +24,9 @@ export function initFunctions(){
   CRUDTahunAjaran()
   initTabelTA()
   initSearchTA()
+
+   // semester
+   initCRUDSemester()
+   initTableSemester()
+   initSearchSemester()
 }

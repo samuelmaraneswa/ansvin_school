@@ -95,7 +95,7 @@ export function initSearchTA(){
     }catch(err){
       console.error(err)
     }
-  })
+  }) 
 
   iconX.addEventListener('click', () => {
     input.value = ''

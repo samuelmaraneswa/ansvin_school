@@ -11,5 +11,7 @@
     </x-navigation.sidebar.nav-dropdownAdmin>
     
     <x-navigation.sidebar.nav-linkAdmin name="Tahun Ajaran" href="{{route('admin.tahun-ajaran.index')}}" data-action="navigate-admin" />
+
+    <x-navigation.sidebar.nav-linkAdmin name="Semester" href="{{route('admin.semester.index')}}" data-action="navigate-admin" />
   </div>
 </aside>

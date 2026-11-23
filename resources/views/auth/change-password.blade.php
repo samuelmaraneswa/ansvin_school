@@ -22,7 +22,7 @@
 </head>
 <body>
   <x-header.authHeader />
-  
+  {{-- {{Hash::make('')}} --}}
   <div class="md:bg-gray-100 md:w-170 p-6 space-y-4 mx-auto mt-5 rounded">
     <div class="">
       <h2 class="text-lg font-semibold">Change Password</h2>

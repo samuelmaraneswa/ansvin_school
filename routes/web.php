@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\PegawaiController;
+use App\Http\Controllers\Admin\SemesterController;
 use App\Http\Controllers\Admin\TahunAjaranController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
@@ -43,4 +44,13 @@ Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
   Route::get('tahun-ajaran/{tahunAjaran}', [TahunAjaranController::class, 'show'])->name('tahun-ajaran.show');
   Route::put('tahun-ajaran/{tahunAjaran}/activation', [TahunAjaranController::class, 'activation'])->name('tahun-ajaran.activation');
   // tahun-ajaran end
+  
+  // semester start
+  Route::get('semester', [SemesterController::class, 'index'])->name('semester.index');
+  Route::post('semester/store', [SemesterController::class, 'store'])->name('semester.store');
+  Route::get('semester/suggestion', [SemesterController::class, 'suggestion'])->name('semester.suggestion');
+  Route::put('semester/{semester}', [SemesterController::class, 'update'])->name('semester.update');
+  Route::get('semester/{semester}', [SemesterController::class, 'show'])->name('semester.show');
+  Route::put('samester/{semester}/activation', [SemesterController::class, 'activation'])->name('semester.activation');
+  // semester end
 });

@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Semester;
 use App\Models\TahunAjaran;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class TahunAjaranController extends Controller
 {
@@ -101,11 +103,26 @@ class TahunAjaranController extends Controller
   public function activation(TahunAjaran $tahunAjaran)
   {
     $newStatus = !$tahunAjaran->is_active;
-     
-    $tahunAjaran->update(['is_active' => $newStatus]);
+
+    DB::transaction(function () use ($tahunAjaran, $newStatus){
+      if ($newStatus) {
+        Semester::where('is_active', true)
+          ->update(['is_active' => false]);
+      } else {
+        Semester::where('tahun_ajaran_id', $tahunAjaran->id)
+          ->update(['is_active' => false]);
+      }
+
+      $tahunAjaran->update(['is_active' => $newStatus]);
+
+      if ($newStatus) {
+        TahunAjaran::where('id', '!=', $tahunAjaran->id)
+          ->update(['is_active' => false]);
+      }
+    });
 
     return response()->json([
-      'message' => $newStatus ? 'Tahun Ajaran berhasil di aktifkan.' : 'Tahun Ajaran berhasil di nonaktfikan.'
+      'message' => $newStatus ? 'Tahun Ajaran berhasil diaktifkan.' : 'Tahun Ajaran berhasil dinonaktifkan.'
     ]);
   }
 }

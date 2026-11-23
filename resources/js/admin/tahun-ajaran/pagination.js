@@ -36,7 +36,7 @@ export function initPagination(data, onChange){
   const pageSelect = pagination.querySelector('#pageSelectTahunAjaran')
   pageSelect.addEventListener('change', (e) => {
     const page = Number(e.target.value)
-    
+     
     const url = new URL(window.location.href)
     page > 1 ? url.searchParams.set('page', page) : url.searchParams.delete('page')
     

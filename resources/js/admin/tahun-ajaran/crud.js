@@ -77,7 +77,7 @@ function handleSubmit(){
       })
 
       const data = await res.json()
-      console.log(data)
+      // console.log(data)
       if(data.errors){
         showValidation(data.errors)
         return
@@ -106,7 +106,7 @@ function handleSubmit(){
     if(!btnEdit) return
     
     const id = btnEdit.dataset.id
-    const url = tahunAjaranRoutes.show.replace('__ID__', id)
+    const url = tahunAjaranRoutes.show.replace('__ID__', id) 
 
     try{
       const res = await fetch(url, {

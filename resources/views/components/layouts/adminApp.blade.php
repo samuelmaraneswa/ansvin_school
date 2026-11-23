@@ -29,6 +29,14 @@
       suggestion:@json(route('admin.tahun-ajaran.suggestion')),
       activation: @json(route('admin.tahun-ajaran.activation', '__ID__')),
     }
+
+    const semesterRoutes = {
+      index: @json(route('admin.semester.index')),
+      show: @json(route('admin.semester.show', '__ID__')),
+      suggestion:@json(route('admin.semester.suggestion')),
+      activation: @json(route('admin.semester.activation', '__ID__')),
+    }
+
   </script>
 
   @vite(['resources/css/app.css', 'resources/js/app.js'])
